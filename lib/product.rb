@@ -13,6 +13,14 @@ class Product
   	add_to_products
   end
 
+  def in_stock?
+  	@stock > 0
+  end
+
+  def self.in_stock
+  	@@products.select {|p| p.in_stock?}
+  end
+
   def self.find_by_title(title)
   	@@products.find {|p| p.title == title}
   end

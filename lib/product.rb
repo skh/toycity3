@@ -4,7 +4,8 @@ class Product
 
 	@@products = []
 
-	attr_reader :title, :price, :stock
+	attr_reader :title, :price
+	attr_accessor :stock
 
   def initialize(options={})
   	@title = options[:title]

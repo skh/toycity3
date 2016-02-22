@@ -15,6 +15,15 @@ class Customer
 		Transaction.new(self, product)
 	end
 
+	def return(product)
+		transaction = Transaction.find(customer: self, product: product)
+		if transaction
+			transaction.cancel
+		else
+			raise NoSuchTransactionError, "#{self.name} did not buy #{product} in this store."
+		end
+	end
+
 	def self.find_by_name(name)
 		@@customers.find {|c| c.name == name}
 	end

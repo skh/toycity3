@@ -8,3 +8,6 @@ end
 
 class OutOfStockError < StandardError
 end
+
+class NoSuchTransactionError < StandardError
+end

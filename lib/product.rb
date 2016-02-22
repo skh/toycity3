@@ -4,13 +4,14 @@ class Product
 
 	@@products = []
 
-	attr_reader :title, :price
+	attr_reader :title, :price, :brand
 	attr_accessor :stock
 
   def initialize(options={})
   	@title = options[:title]
   	@price = options[:price]
   	@stock = options[:stock]
+  	@brand = options[:brand]
   	add_to_products
   end
 
@@ -24,6 +25,10 @@ class Product
 
   def self.find_by_title(title)
   	@@products.find {|p| p.title == title}
+  end
+
+  def self.find_by_brand(brand)
+  	@@products.select {|p| p.brand == brand}
   end
 
   def self.all

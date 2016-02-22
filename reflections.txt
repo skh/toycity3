@@ -1,0 +1,12 @@
+1. How long did you spend working on this project?
+About 4-6 hours.
+
+2. What was the most rewarding challenge you conquered?
+Understanding how to use class attributes and methods in Ruby.
+
+3. What two additional features did you build? Why?
+- Returning items / cancelling transactions -- every store has to be able to handle that.
+- Added attribute 'brand' to Product, and the ability to find by brand
+
+4. Where do you still have room to grow?
+I still don't think I'm writing idiomatic Ruby, so while it works, my code could probably be nicer and more elegant.

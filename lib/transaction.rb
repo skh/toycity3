@@ -24,12 +24,22 @@ class Transaction
 		end
 	end
 
+	def cancel
+		@product.stock += 1
+		@@transactions.delete(self)
+	end
+
 	def self.all
 		return @@transactions
 	end
 
-	def self.find(id)
-		return @@transactions.find {|t| t.id == id}
+	def self.find(options={})
+		if options[:id]
+			return @@transactions.find {|t| t.id == options[:id]}
+		elsif options[:customer] and options[:product]
+			return @@transactions.find { |t|
+				t.customer == options[:customer] and t.product == options[:product]
+			}
+		end
 	end
-
 end
